@@ -1,6 +1,6 @@
 # 限流器
 1、概述：<br>
-	基于令牌桶算法实现，实现qps限制。blog: https://mp.csdn.net/console/editor/html/106130057  
+	基于令牌桶算法实现，实现qps限制。blog: https://blog.csdn.net/weixin_42333737/article/details/106130057  
 <br>
 <br>
 2、特点：<br>
