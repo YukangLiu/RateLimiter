@@ -8,12 +8,10 @@
 #include <unistd.h>
 
 #define RETRY_IMMEDIATELY_TIMES 100//不睡眠的最大重试获得令牌的次数
-#define NS_PER_SECOND 1000000000//一秒的纳秒数
-#define NS_PER_USECOND 1000//一微秒的纳秒数
 
  //qps限制最大为十亿
 RateLimiter::RateLimiter(int64_t qps) : 
-    bucketSize_(qps), tokenLeft_(0), supplyUnitTime_(NS_PER_SECOND / qps), lastAddTokenTime_(0)
+    bucketSize_(1), tokenLeft_(0), supplyUnitTime_(NS_PER_SECOND / qps), lastAddTokenTime_(0)
 { 
     assert(qps <= NS_PER_SECOND);
 	assert(qps >= 0);

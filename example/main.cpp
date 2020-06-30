@@ -1,7 +1,9 @@
 //@author liuyukang
-#include "rate_limiter.h"
+#include "../src/rate_limiter.h"
 
 #include <iostream>
+#include <sys/time.h>
+#include <unistd.h>
 
 int64_t now()
 {
@@ -14,6 +16,7 @@ int64_t now()
 int main()
 {
     RateLimiter r(100);//100qps限流器
+    sleep(1);
 
     auto start = now();
 
